@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Site Auction</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Swiper & AOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><button class="btn text-light ms-4" style="background-color: #e63946;">Login</button></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to New Site Auction</h1>
+            <p>The largest platform for Cars, Towers, Companies & Houses Auctions</p> <a href="#" class="btn">Explore
+                Auctions</a>
+        </div>
+    </section>
+
+    <!-- Trending Lots -->
+    <section class="trending py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="mb-5 fw-bold">Trending Lots</h2>
+            <!-- Swiper -->
+            <div class="swiper trendingSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/prj.jpg" class="card-img-top" alt="Car">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Luxury Car</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 5 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$120,000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/us.svg" class="me-1" width="16" height="12" alt="USA">
+                                    <small>United States</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 45
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/images (1).jfif" class="card-img-top" alt="Car">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Luxury Car</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 5 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$120,000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/us.svg" class="me-1" width="16" height="12" alt="USA">
+                                    <small>United States</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 45
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80"
+                                class="card-img-top" alt="Car">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Luxury Car</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 15 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$120,000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/us.svg" class="me-1" width="16" height="12" alt="USA">
+                                    <small>United States</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 45
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/fa7d7b77120a5022476015ce54f579d9.jpg" class="card-img-top" alt="Car">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Luxury Car</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 10 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$120,000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/us.svg" class="me-1" width="16" height="12" alt="USA">
+                                    <small>United States</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 45
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/اجمل صور سيارة مرسيدس صفراء ، صور سيارات مرسيدس جيب 4K.jpg"
+                                class="card-img-top" alt="House">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Modern House</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 22 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$350,000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/ae.svg" class="me-1" width="16" height="12" alt="UAE">
+                                    <small>UAE</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 78
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/images.jfif" class="card-img-top" alt="Tower">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Business Tower</h6>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-1 fw-bold"> 2 <i class="fa-solid fa-gavel fs-6"></i></p>
+                                    <p class="fs-6">$120,0000</p>
+                                </div>
+                                <p class="mb-0 d-flex align-items-center">
+                                    <img src="https://flagcdn.com/gb.svg" class="me-1" width="16" height="12" alt="UK">
+                                    <small>UK</small>
+                                </p>
+                            </div>
+                            <div class="position-absolute top-2 end-2 bg-light p-1"
+                                style="right: 0;border-radius: 20px;">
+                                <i class="fa-solid fa-heart"></i> 102
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="swiper-pagination mt-3"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auctions Closing Soon -->
+    <section class="closing-soon py-5 bg-light" data-aos="fade-left">
+        <div class="container">
+            <h2 class="mb-5 fw-bold text-center">Auctions Closing Soon</h2>
+            <!-- Swiper -->
+            <div class="swiper closingSoonSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80"
+                                class="card-img-top" alt="Car">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Car Auction</h6>
+                                <p class="countdown" data-time="2025-10-05T18:00:00"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
+                                class="card-img-top" alt="House">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">House Auction</h6>
+                                <p class="countdown" data-time="2025-10-06T12:00:00"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80"
+                                class="card-img-top" alt="Tower">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Tower Auction</h6>
+                                <p class="countdown" data-time="2025-10-07T20:00:00"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80"
+                                class="card-img-top" alt="Company">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Company Auction</h6>
+                                <p class="countdown" data-time="2025-10-08T15:00:00"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-scale position-relative">
+                            <img src="images/prj.jpg" class="card-img-top" alt="Company">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Company Auction</h6>
+                                <p class="countdown" data-time="2025-10-08T15:00:00"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider Controls -->
+                <div class="swiper-pagination mt-3"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Popular Categories  -->
+    <section class="categories py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Popular Categories</h2>
+            <div class="d-flex justify-content-center mb-4 gap-3 flex-wrap">
+                <button class="btn btn-outline-dark filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-dark filter-btn" data-filter="cars">Cars</button>
+                <button class="btn btn-outline-dark filter-btn" data-filter="houses">Houses</button>
+                <button class="btn btn-outline-dark filter-btn" data-filter="towers">Towers</button>
+            </div>
+            <div class="row g-4 rounded mt-3 shadow" style="border: 0.01px solid #bfbfbf">
+                <a href="#" class="text-decoration-none">
+                    <p class="text-end" style="color: #e63946;">view All <i class="fas fa-share"></i></p>
+                </a>
+                <div class="col-md-3 filter-item cars hover-scale">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5>Luxury Car</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 filter-item houses hover-scale">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5>Modern House</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 filter-item towers hover-scale">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5>Business Tower</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 filter-item cars hover-scale">
+                    <div class="card">
+                        <img src="images/prj.jpg" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5>Sports Car</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Auctions -->
+    <section class="py-5" data-aos="fade-right">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Live Auctions</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card auction-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Car">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luxury Car</h5>
+                            <p class="countdown" data-time="2025-12-31T23:59:59"></p>
+                            <a href="#" class="btn btn-dark mt-2">Bid Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card auction-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="House">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Modern House</h5>
+                            <p class="countdown" data-time="2025-11-20T12:00:00"></p>
+                            <a href="#" class="btn btn-dark mt-2">Bid Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card auction-card">
+                        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Tower">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Business Tower</h5>
+                            <p class="countdown" data-time="2025-10-20T20:00:00"></p>
+                            <a href="#" class="btn btn-dark mt-2">Bid Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Properties You May Like -->
+    <section class="recommended py-5" data-aos="fade-left">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Properties You May Like</h2>
+            <div class="row g-4">
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="House">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luxury Villa</h5>
+                            <p>3 Beds, 2 Baths, 2500 sq ft</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="images/اجمل صور سيارة مرسيدس صفراء ، صور سيارات مرسيدس جيب 4K.jpg"
+                            class="card-img-top" alt="House">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luxury Villa</h5>
+                            <p>3 Beds, 2 Baths, 2500 sq ft</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="images/prj.jpg" class="card-img-top" alt="House">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luxury Villa</h5>
+                            <p>3 Beds, 2 Baths, 2500 sq ft</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="images/1746547485074[1].jpg" class="card-img-top" alt="House">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luxury Villa</h5>
+                            <p>3 Beds, 2 Baths, 2500 sq ft</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="images/fa7d7b77120a5022476015ce54f579d9.jpg" class="card-img-top" alt="Apartment">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Modern Apartment</h5>
+                            <p>2 Beds, 1 Bath, 1200 sq ft</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 auction-card">
+                    <div class="card hover-scale">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Office">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Office Space</h5>
+                            <p>5000 sq ft, Central Location</p>
+                            <a href="#" class="btn btn-dark">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <i class="fa-solid fa-users"></i>
+                    <h3 class="counter" data-target="5000">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa-solid fa-gavel"></i>
+                    <h3 class="counter" data-target="300">0</h3>
+                    <p>Live Auctions</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa-solid fa-building"></i>
+                    <h3 class="counter" data-target="150">0</h3>
+                    <p>Properties Sold</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa-solid fa-car"></i>
+                    <h3 class="counter" data-target="1200">0</h3>
+                    <p>Cars Auctioned</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Why Choose New Site Auction?</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h5 class="fw-bold">Secure Transactions</h5>
+                    <p>We guarantee safe and transparent bidding for all users.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa-solid fa-users"></i>
+                    <h5 class="fw-bold">Trusted Community</h5>
+                    <p>Thousands of satisfied clients from around the globe.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h5 class="fw-bold">Fast & Easy</h5>
+                    <p>Simple registration and quick bidding experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Auctions</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- JS for Time and Countdown -->
+    <script>
+        // Current Time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("currentTime").textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Countdown
+        function updateCountdowns() {
+            const countdowns = document.querySelectorAll(".countdown");
+            countdowns.forEach(el => {
+                const endTime = new Date(el.getAttribute("data-time")).getTime();
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    el.textContent = "Auction Ended";
+                } else {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            });
+        }
+        setInterval(updateCountdowns, 1000);
+        updateCountdowns();
+
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 100) {
+                    el.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+
+    </script>
+    <script>
+        // Time
+        setInterval(() => {
+            document.getElementById("currentTime").textContent = new Date().toLocaleTimeString();
+        }, 1000);
+
+        // Swiper
+        const trendingSwiper = new Swiper(".trendingSwiper", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                576: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 }
+            }
+        });
+
+        var closingSoonSwiper = new Swiper(".closingSoonSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".closing-soon .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".closing-soon .swiper-button-next",
+                prevEl: ".closing-soon .swiper-button-prev",
+            },
+            breakpoints: {
+                576: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                992: { slidesPerView: 4 }
+            }
+        });
+
+
+        // AOS Init
+        AOS.init({
+            duration: 1000,
+            once: false // يعني يعيد تشغيل الأنيميشن مع كل Scroll
+        });
+    </script>
+
+    <script>
+        // Counter Animation مع Intersection Observer
+        const counters = document.querySelectorAll('.counter');
+        let counterStarted = false; // حتى ما يشتغل أكثر من مرة
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                counter.innerText = '0';
+                const updateCounter = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const c = +counter.innerText;
+                    const increment = target / 200;
+                    if (c < target) {
+                        counter.innerText = `${Math.ceil(c + increment)}`;
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterStarted) {
+                    animateCounters();
+                    counterStarted = true; // تشغيل مرة واحدة فقط
+                }
+            });
+        }, { threshold: 0.5 }); // يعني لما نصف السكشن يكون ظاهر
+
+        observer.observe(statsSection);
+    </script>
+
+
+</body>
+
+</html>
