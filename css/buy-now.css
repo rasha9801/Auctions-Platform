@@ -262,7 +262,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    height: 130px;
+    height: 150px;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
@@ -306,8 +306,10 @@
 
 .list-view-card .btn-buy {
     font-size: 0.8rem;
-    padding: 4px 10px;
+    padding: 4px 0px;
     border-radius: 6px;
+    flex-grow: 0 !important;
+    width: 200px;
 }
 
 .list-view-card .icon-btn {
