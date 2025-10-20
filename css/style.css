@@ -195,6 +195,7 @@
 
     .hover-scale img {
         transition: transform 0.4s ease, box-shadow 0.4s ease;
+        height: 200px;
     }
 
     .hover-scale:hover img {
@@ -256,7 +257,6 @@
     /* Flag icon */
     .trending .card-body img {
         width: 14px;
-        /* أصغر من قبل */
         height: 10px;
         object-fit: cover;
         border-radius: 2px;
@@ -269,19 +269,40 @@
         transition: color 0.3s ease;
     }
 
+
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
         color: #e63946;
     }
 
     .swiper-pagination-bullet {
-        background: #666;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
         opacity: 0.6;
+        transition: all 0.3s ease;
     }
 
     .swiper-pagination-bullet-active {
         background: #e63946;
         opacity: 1;
+        transform: scale(1);
+    }
+
+     .swiper-pagination {
+        position: relative !important;
+        margin-top: 20px !important;
+        bottom: 0 !important;
+    }
+
+    .trending .swiper-pagination {
+        position: relative !important;
+        margin-top: 10px !important;
+    }
+
+    .closing-soon .swiper-pagination {
+        position: relative !important;
+        margin-top: 10px !important;
     }
 
     /* Title decoration */
@@ -384,8 +405,10 @@
             opacity: 1;
         }
     }
-  
-  html[dir="rtl"] body {
-    direction: rtl;
-    text-align: right;
-}
+
+    html[dir="rtl"] body {
+        direction: rtl;
+        text-align: right;
+    }
+
+   
