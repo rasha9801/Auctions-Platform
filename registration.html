@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration&login.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                     <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i
+                                class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration -->
+    <div class="register-container">
+        <div class="register-form">
+            <h2 class="text-center"><i class="fa-solid fa-user-plus me-2"></i>Register</h2>
+
+            <!-- User Type Switch -->
+            <div class="user-type">
+                <button id="btnIndividual" class="active">Individual</button>
+                <button id="btnOrganization">Organization</button>
+            </div>
+
+            <!-- Form -->
+            <form id="registerForm">
+                <!-- Individual -->
+                <div id="individualForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Full name in English</label>
+                            <input type="text" class="form-control" placeholder="Enter full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" placeholder="Enter username" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Repeat Password</label>
+                            <input type="password" class="form-control" placeholder="Repeat password" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="example@email.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" placeholder="0090000000" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organization -->
+                <div id="organizationForm" style="display: none;">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Trade License Number</label>
+                            <input type="text" class="form-control" placeholder="Enter license number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Trade License Expiry</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tax Registration Number</label>
+                            <input type="text" class="form-control" placeholder="Enter tax number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Full name in English</label>
+                            <input type="text" class="form-control" placeholder="Enter full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" placeholder="Enter username" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Repeat Password</label>
+                            <input type="password" class="form-control" placeholder="Repeat password" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="example@email.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" placeholder="009000000" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="form-check mt-4">
+                    <input class="form-check-input" type="checkbox" id="agree" required>
+                    <label class="form-check-label" for="agree">
+                        I agree to the <a href="terms.html" target="_blank" class="text-danger">Terms and Conditions</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-register mt-4">Create an account</button>
+            </form>
+
+            <div class="links mt-4 text-center">
+                <p>Already have an account? <a href="login.html" style="color: #e63946;">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const btnInd = document.getElementById("btnIndividual");
+        const btnOrg = document.getElementById("btnOrganization");
+        const indForm = document.getElementById("individualForm");
+        const orgForm = document.getElementById("organizationForm");
+
+        btnInd.addEventListener("click", () => {
+            btnInd.classList.add("active");
+            btnOrg.classList.remove("active");
+            indForm.style.display = "block";
+            orgForm.style.display = "none";
+        });
+
+        btnOrg.addEventListener("click", () => {
+            btnOrg.classList.add("active");
+            btnInd.classList.remove("active");
+            orgForm.style.display = "block";
+            indForm.style.display = "none";
+        });
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Buy Now</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/buy-now.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i
+                                class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container my-4">
+
+        <!-- HERO / SEARCH -->
+        <section class="hero p-3 mb-3">
+            <div class="row g-2 align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="mb-1">Buy Now — Instant Purchase Marketplace</h2>
+                    <p class="small-muted mb-0">Browse curated listings available for immediate purchase. Secure
+                        payments, fast delivery.</p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group">
+                        <input id="searchInput" class="form-control search-input"
+                            placeholder="Search items, categories, sellers..." aria-label="Search">
+                        <button id="searchBtn" class="btn btn-outline-secondary ms-2"><i
+                                class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <!-- LEFT: FILTERS & PROMO -->
+            <aside class="col-lg-3 mb-4">
+                <div class="filters-panel mb-3">
+                    <h6 class="mb-3" style="color:var(--dark); font-weight:700;">Filters</h6>
+
+                    <label class="form-label small-muted">Category</label>
+                    <select id="filterCategory" class="form-select mb-2">
+                        <option value="">All Categories</option>
+                        <option>Cars</option>
+                        <option>Watches</option>
+                        <option>Electronics</option>
+                        <option>Antiques</option>
+                        <option>Real Estate</option>
+                    </select>
+
+                    <label class="form-label small-muted">Condition</label>
+                    <select id="filterCondition" class="form-select mb-2">
+                        <option value="">Any</option>
+                        <option>New</option>
+                        <option>Used</option>
+                    </select>
+
+                    <label class="form-label small-muted">Location</label>
+                    <select id="filterLocation" class="form-select mb-2">
+                        <option value="">All Locations</option>
+                        <option>....</option>
+                        <option>....</option>
+                        <option>...</option>
+                    </select>
+
+                    <label class="form-label small-muted">Price Range</label>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <input id="priceMin" class="form-control form-control-sm" placeholder="Min" type="number">
+                        <input id="priceMax" class="form-control form-control-sm" placeholder="Max" type="number">
+                    </div>
+
+                    <label class="form-label small-muted">Sort by</label>
+                    <select id="sortBy" class="form-select mb-3">
+                        <option value="latest">Latest</option>
+                        <option value="price-asc">Price: Low → High</option>
+                        <option value="price-desc">Price: High → Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+
+                    <button id="applyFilters" class="btn btn-sm btn-outline-danger w-100 mb-2">Apply</button>
+                    <button id="clearFilters" class="btn btn-sm btn-outline-secondary w-100">Clear</button>
+                </div>
+
+                <!-- Promo -->
+                <div class="promo-strip">
+                    <div>
+                        <div style="font-weight:700;">Use code <span style="color:var(--brand)">SAVE10</span></div>
+                        <div class="small-muted">Get 10% off on orders over $200</div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="p-3 bg-white rounded shadow-sm small-muted">
+                    <h6 style="color:var(--brand); font-weight:700;">Delivery & Payment</h6>
+                    <p class="mb-1">• Fast shipping across the country</p>
+                    <p class="mb-1">• Secure payment (cards, wallets)</p>
+                    <p class="mb-0">• Free shipping over $500</p>
+                </div>
+            </aside>
+
+            <!-- RIGHT: Main content -->
+            <section class="col-lg-9">
+
+                <!-- Featured Deals Carousel -->
+                <div class="featured-card p-3 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+
+
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                                class="img-fluid rounded" alt="Featured">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="badge-deal mb-2">LIMITED TIME</div>
+                            <h5 class="mb-1">Luxury Watch — 20% Off</h5>
+                            <p class="small-muted mb-2">Exclusive "Buy Now" deal. Secure it before the offer ends.</p>
+                            <div>Now <span class="price">$480</span> <small class="small-muted">was $600</small></div>
+                        </div>
+                        <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                            <div class="deal-countdown" id="featuredCountdown">00:45:10</div>
+                            <button class="btn btn-buy mt-2" onclick="openQuickViewFromFeatured()">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid controls -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <small class="small-muted">Showing <strong id="showCount">9</strong> of 120 results</small>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="small-muted">View</div>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="setGrid(3)"><i
+                                class="fa fa-th"></i></button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="setGrid(1)"><i
+                                class="fa fa-list"></i></button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="row g-3" id="productsGrid">
+                    <!-- product cards will be injected by JS -->
+                </div>
+
+                <!-- Pagination -->
+                <nav class="mt-4" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- pagination generated by JS -->
+                    </ul>
+                </nav>
+
+                <!-- Suggested -->
+                <div class="mt-5">
+                    <h5 class="mb-3">You May Also Like</h5>
+                    <div class="row g-3" id="suggested">
+                        <!-- suggestions inserted by JS -->
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <img id="modalImg" src="" alt="product" class="modal-product-img">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalTitle">Product Title</h4>
+                            <div class="mb-2"><span id="modalPrice" class="price">$0</span> <small id="modalOld"
+                                    class="small-muted"></small></div>
+                            <p id="modalDesc" class="small-muted">Short description here.</p>
+
+                            <div class="mb-3">
+                                <label class="form-label small-muted">Quantity</label>
+                                <input id="modalQty" type="number" class="form-control" value="1" min="1"
+                                    style="width:120px;">
+                            </div>
+
+                            <div class="d-flex gap-2 align-items-center mb-3">
+                                <button class="btn btn-buy" id="modalBuyBtn"><i class="fa fa-credit-card me-2"></i> Buy
+                                    Now</button>
+
+                            </div>
+
+                            <div class="small-muted mb-2"><strong>Seller:</strong> <span id="modalSeller">Trusted
+                                    Seller</span></div>
+                            <div class="small-muted"><strong>Condition:</strong> <span id="modalCondition">New</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /***** Sample data (would come from server in real app) *****/
+        const PRODUCTS = [
+            { id: 1, title: 'Luxury Watch', price: 480, old: 600, img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80', category: 'Watches', condition: 'Used', seller: 'VintageCo', rating: 4.7, location: 'Homs' },
+            { id: 2, title: 'Sport Coupe Car', price: 45000, old: 0, img: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80', category: 'Cars', condition: 'Used', seller: 'AutoHub', rating: 4.5, location: '...' },
+            { id: 3, title: 'Antique Vase', price: 800, old: 0, img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80', category: 'Antiques', condition: 'Used', seller: 'Rara', rating: 4.1, location: '...' },
+            { id: 4, title: 'Smartphone X Pro', price: 420, old: 499, img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80', category: 'Electronics', condition: 'New', seller: 'TechStore', rating: 4.6, location: 'Syria' },
+            { id: 5, title: 'Luxury Necklace', price: 1200, old: 1500, img: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80', category: 'Jewelry', condition: 'New', seller: 'Gems', rating: 4.8, location: '...' },
+            { id: 6, title: 'Vintage Guitar', price: 1500, old: 0, img: 'https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=900&q=80', category: 'Music', condition: 'Used', seller: 'Strings', rating: 4.4, location: '...' },
+            { id: 7, title: 'Business Office Tower (plot)', price: 350000, old: 0, img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80', category: 'Real Estate', condition: 'New', seller: 'PrimeEstates', rating: 4.2, location: 'Homs' },
+            { id: 8, title: 'Premium Headphones', price: 200, old: 0, img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80', category: 'Electronics', condition: 'New', seller: 'SoundBox', rating: 4.3, location: '...' },
+            { id: 9, title: 'Collector Car', price: 90000, old: 0, img: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80', category: 'Cars', condition: 'Used', seller: 'ClassicMotors', rating: 4.9, location: '...' }
+        ];
+
+        const SUGGESTED = [
+            { id: 101, title: 'Accessory Kit', price: 45, img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=60' },
+            { id: 102, title: 'Screen Protector', price: 9, img: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=60' },
+            { id: 103, title: 'Car Cover', price: 60, img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=60' }
+        ];
+
+        /***** State *****/
+        let currentProducts = [...PRODUCTS];
+        let currentPage = 1;
+        const perPage = 6;
+
+        /***** Utility *****/
+        function formatPrice(v) { return '$' + v.toLocaleString(); }
+
+        /***** Render functions *****/
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            const start = (currentPage - 1) * perPage;
+            const items = currentProducts.slice(start, start + perPage);
+            document.getElementById('showCount').textContent = currentProducts.length;
+
+            items.forEach(p => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4';
+
+                const extraInfo =
+                    p.category === 'Cars'
+                        ? `
+           <div class="small-muted">Mileage: 160383 KM</div>`
+                        : '';
+
+                col.innerHTML = `
+      <div class="product-card p-2">
+        <div class="position-relative">
+          <img src="${p.img}" alt="${p.title}" class="product-img rounded">
+          <div class="position-absolute top-0 end-0 m-2 d-flex gap-2">
+            <button class="icon-btn" title="Quick view" onclick="openQuickView(${p.id})">
+              <i class="fa fa-eye"></i>
+            </button>
+            <button class="icon-btn" title="Add to wishlist" onclick="toggleWishlist(this)">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+        </div>
+        <div class="p-3">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <div>
+                              <div class="small-muted  mt-1">#ID: 77724</div>
+              <div class="small-muted">${p.category} • ${p.location}</div>
+              <h6 class="mt-1 mb-1">${p.title}</h6>
+                            <div class="small-muted mt-1"> ${extraInfo}</div>
+              <div class="small-muted"><i class="fa fa-star text-warning"></i> ${p.rating}</div>
+            </div>
+            <div class="text-end">
+              <div class="price">${formatPrice(p.price)}</div>
+              ${p.old ? `<div class="small-muted" style="text-decoration:line-through">${formatPrice(p.old)}</div>` : ''}
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn-buy flex-grow-1" onclick="buyNow(${p.id})">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+                grid.appendChild(col);
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const total = Math.ceil(currentProducts.length / perPage);
+            const ul = document.getElementById('pagination');
+            ul.innerHTML = '';
+            for (let i = 1; i <= total; i++) {
+                const li = document.createElement('li');
+                li.className = 'page-item ' + (i === currentPage ? 'active' : '');
+                li.innerHTML = `<a class="page-link" href="#" onclick="goPage(${i});return false;">${i}</a>`;
+                ul.appendChild(li);
+            }
+        }
+
+        function renderSuggested() {
+            const box = document.getElementById('suggested');
+            box.innerHTML = '';
+            SUGGESTED.forEach(s => {
+                const col = document.createElement('div'); col.className = 'col-md-2 col-6';
+                col.innerHTML = `
+          <div class="suggest-card bg-white p-2 text-center">
+            <img src="${s.img}" alt="${s.title}">
+            <div class="p-2">
+              <div class="small-muted">${s.title}</div>
+              <div class="price">${formatPrice(s.price)}</div>
+            </div>
+          </div>
+        `;
+                box.appendChild(col);
+            });
+        }
+
+
+
+
+        /***** Actions *****/
+        function openQuickView(id) {
+            const p = PRODUCTS.find(x => x.id === id);
+            if (!p) return;
+            document.getElementById('modalImg').src = p.img;
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalPrice').textContent = formatPrice(p.price);
+            document.getElementById('modalOld').textContent = p.old ? formatPrice(p.old) : '';
+            document.getElementById('modalDesc').textContent = `A premium ${p.category} item sold by ${p.seller}. Excellent condition: ${p.condition}.`;
+            document.getElementById('modalSeller').textContent = p.seller;
+            document.getElementById('modalCondition').textContent = p.condition;
+            document.getElementById('modalQty').value = 1;
+            const modal = new bootstrap.Modal(document.getElementById('quickViewModal'));
+            modal.show();
+        }
+
+        function openQuickViewFromFeatured() {
+            // open first product quick view for demo
+            openQuickView(PRODUCTS[0].id);
+        }
+
+        function buyNow(id) {
+            const p = PRODUCTS.find(x => x.id === id);
+            if (!p) return alert('Item not found');
+            // In real app redirect to checkout; here we simulate:
+            alert(`Proceed to checkout for "${p.title}" — ${formatPrice(p.price)}`);
+        }
+
+        function toggleWishlist(btn) {
+            btn.classList.toggle('text-danger');
+            btn.firstElementChild.classList.toggle('fa-solid');
+            // visual only; integrate with backend in real app
+        }
+
+        function goPage(n) {
+            currentPage = n;
+            renderProducts();
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+
+        function setGrid(cols) {
+            const grid = document.getElementById('productsGrid');
+            if (cols === 1) {
+                // نمط قائمة أفقية
+                Array.from(grid.children).forEach(c => {
+                    c.className = 'col-12';
+                    const card = c.querySelector('.product-card');
+                    card.classList.add('list-view-card');
+                });
+            } else {
+                // نمط شبكي 3 أعمدة
+                Array.from(grid.children).forEach(c => {
+                    c.className = 'col-md-4';
+                    const card = c.querySelector('.product-card');
+                    card.classList.remove('list-view-card');
+                });
+            }
+        }
+
+
+        // Filters
+        document.getElementById('applyFilters').addEventListener('click', () => {
+            const cat = document.getElementById('filterCategory').value;
+            const cond = document.getElementById('filterCondition').value;
+            const loc = document.getElementById('filterLocation').value;
+            const min = parseFloat(document.getElementById('priceMin').value) || 0;
+            const max = parseFloat(document.getElementById('priceMax').value) || Infinity;
+            const sort = document.getElementById('sortBy').value;
+
+            currentProducts = PRODUCTS.filter(p => {
+                return (cat ? p.category === cat : true)
+                    && (cond ? p.condition === cond : true)
+                    && (loc ? p.location === loc : true)
+                    && (p.price >= min && p.price <= max);
+            });
+
+            if (sort === 'price-asc') currentProducts.sort((a, b) => a.price - b.price);
+            else if (sort === 'price-desc') currentProducts.sort((a, b) => b.price - a.price);
+            else if (sort === 'popular') currentProducts.sort((a, b) => b.rating - a.rating);
+            else currentProducts = currentProducts; // latest keep original order
+
+            currentPage = 1;
+            renderProducts();
+        });
+
+        document.getElementById('clearFilters').addEventListener('click', () => {
+            document.getElementById('filterCategory').value = '';
+            document.getElementById('filterCondition').value = '';
+            document.getElementById('filterLocation').value = '';
+            document.getElementById('priceMin').value = '';
+            document.getElementById('priceMax').value = '';
+            document.getElementById('sortBy').value = 'latest';
+            currentProducts = [...PRODUCTS];
+            currentPage = 1;
+            renderProducts();
+        });
+
+        // Featured countdown demo
+        function startFeaturedCountdown(sec) {
+            const el = document.getElementById('featuredCountdown');
+            let t = sec;
+            const iv = setInterval(() => {
+                if (t <= 0) { el.textContent = 'Offer ended'; clearInterval(iv); return; }
+                const hh = Math.floor(t / 3600); const mm = Math.floor((t % 3600) / 60); const ss = t % 60;
+                el.textContent = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:${String(ss).padStart(2, '0')}`;
+                t--;
+            }, 1000);
+        }
+
+        // Search
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const q = document.getElementById('searchInput').value.trim().toLowerCase();
+            currentProducts = PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.seller.toLowerCase().includes(q));
+            currentPage = 1;
+            renderProducts();
+        });
+
+        // Initial render
+        renderProducts();
+        renderSuggested();
+        startFeaturedCountdown(2700); // 45 minutes demo
+
+        // ==== Language Toggle RTL/LTR ====
+        document.addEventListener("DOMContentLoaded", () => {
+            const langBtn = document.querySelector('.navbar .btn.text-light.ms-4[style*="#111"]');
+
+            if (langBtn) {
+                langBtn.addEventListener('click', () => {
+                    const html = document.documentElement;
+
+                    if (html.dir === 'rtl') {
+                        // Switch to English (LTR)
+                        html.dir = 'ltr';
+                        html.lang = 'en';
+                        langBtn.textContent = 'العربية';
+                        document.body.style.textAlign = 'left';
+                    } else {
+                        // Switch to Arabic (RTL)
+                        html.dir = 'rtl';
+                        html.lang = 'ar';
+                        langBtn.textContent = 'English';
+                        document.body.style.textAlign = 'right';
+                    }
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

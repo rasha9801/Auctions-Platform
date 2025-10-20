@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Auctions</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/liveAuctions.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                     <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i
+                                class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auction Carousel -->
+    <main id="auctionCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#auctionCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#auctionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#auctionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                    class="card-img-top" alt="Car">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Featured Auction: Luxury Car</h5>
+                    <p>Starting Bid: $50,000 | Ends in 01:30:00</p>
+                    <button class="btn bid-btn">Place Bid</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                    class="card-img-top" alt="Car">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Featured Auction: Luxury Car</h5>
+                    <p>Starting Bid: $50,000 | Ends in 01:30:00</p>
+                    <button class="btn bid-btn">Place Bid</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                    class="card-img-top" alt="Car">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Featured Auction: Luxury Car</h5>
+                    <p>Starting Bid: $50,000 | Ends in 01:30:00</p>
+                    <button class="btn bid-btn">Place Bid</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#auctionCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#auctionCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </main>
+
+    <!-- Filters -->
+    <section class="container filters mt-4 d-flex flex-wrap align-items-center">
+        <input type="text" class="form-control w-auto" placeholder="Search Products">
+        <select class="form-select w-auto">
+            <option selected>All Categories</option>
+            <option>Cars</option>
+            <option>Watches</option>
+            <option>Antiques</option>
+        </select>
+        <select class="form-select w-auto">
+            <option selected>Price Range</option>
+            <option>0 - 500$</option>
+            <option>500$ - 1000$</option>
+        </select>
+        <select class="form-select w-auto">
+            <option selected>Time Left</option>
+            <option>Less than 1h</option>
+            <option>1h - 24h</option>
+        </select>
+        <div class="view-toggle mb-2">
+            <button id="gridView"><i class="fa-solid fa-grip"></i></button>
+            <button id="listView"><i class="fa-solid fa-list"></i></button>
+        </div>
+    </section>
+
+    <!-- Auction Cards -->
+    <section class="container auction-container">
+        <div class="row g-4" id="auctionView">
+            <!-- Auction Card 1 -->
+            <div class="col-md-4 position-relative">
+                <span class="badge-hot">Hot</span>
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Watch">
+                    <div class="auction-body text-center">
+                        <h3 class="auction-title">Luxury Watch</h3>
+                        <div class="d-flex justify-content-around">
+                            <p class="text-dark"> <strong>#ID:</strong> 45645 </p>
+                            <p class="auction-price" id="price1">$500</p>
+                        </div>
+                        <p class="countdown" id="timer1">Time Left: 00:10:00</p>
+                        <div class="d-flex justify-content-around mt-3 mb-3">
+                            <div>
+                                <p class="text-dark" style="font-size: 14px;">Mileage: 84451 KM </p>
+                                <a href="auction-details.html" class="text-secondary text-decoration-none"
+                                    style="font-size: 14px;">View Details</a>
+                            </div>
+                            <form>
+                                <label class="label-control text-dark" style="font-size: 14px;">Bids#: 20</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option selected>select bid</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div>
+                            <button class="bid-btn" onclick="increaseBid('price1',5)">+5</button>
+                            <button class="bid-btn" onclick="increaseBid('price1',10)">+10</button>
+                            <!-- <button class="bid-btn" onclick="maxBid('price1')">Max</button> -->
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mt-2">
+                            <input type="number" id="customBid1" class="form-control w-25 me-2" min="1"
+                                placeholder="+$">
+                            <button class="bid-btn" onclick="customBid('price1','customBid1')">Bid</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auction Card 2 -->
+            <div class="col-md-4 position-relative">
+                <span class="badge-hot">Ending Soon</span>
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80"
+                        alt="Vintage Guitar">
+                    <div class="auction-body text-center">
+                        <h3 class="auction-title">Vintage Guitar</h3>
+                         <div class="d-flex justify-content-around">
+                            <p class="text-dark"> <strong>#ID:</strong> 45645 </p>
+                            <p class="auction-price" id="price2">$500</p>
+                        </div>
+                        <p class="countdown" id="timer1">Time Left: 00:10:00</p>
+                        <div class="d-flex justify-content-around mt-3 mb-3">
+                            <div>
+                                <p class="text-dark" style="font-size: 14px;">Mileage: 84451 KM </p>
+                                <a href="auction-details.html" class="text-secondary text-decoration-none"
+                                    style="font-size: 14px;">View Details</a>
+                            </div>
+                            <form>
+                                <label class="label-control text-dark" style="font-size: 14px;">Bids#: 20</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option selected>select bid</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div>
+                            <button class="bid-btn" onclick="increaseBid('price2',10)">+10</button>
+                            <button class="bid-btn" onclick="increaseBid('price2',50)">+50</button>
+                            <!-- <button class="bid-btn" onclick="maxBid('price2')">Max</button> -->
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mt-2">
+                            <input type="number" id="customBid2" class="form-control w-25 me-2" min="1"
+                                placeholder="+$">
+                            <button class="bid-btn" onclick="customBid('price2','customBid2')">Bid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auction Card 3 -->
+            <div class="col-md-4 position-relative">
+                <span class="badge-hot">Hot</span>
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80"
+                        alt="Antique Vase">
+                    <div class="auction-body text-center">
+                        <h3 class="auction-title">Antique Vase</h3>
+                         <div class="d-flex justify-content-around">
+                            <p class="text-dark"> <strong>#ID:</strong> 45645 </p>
+                            <p class="auction-price" id="price13">$500</p>
+                        </div>
+                        <p class="countdown" id="timer1">Time Left: 00:10:00</p>
+                        <div class="d-flex justify-content-around mt-3 mb-3">
+                            <div>
+                                <p class="text-dark" style="font-size: 14px;">Mileage: 84451 KM </p>
+                                <a href="auction-details.html" class="text-secondary text-decoration-none"
+                                    style="font-size: 14px;">View Details</a>
+                            </div>
+                            <form>
+                                <label class="label-control text-dark" style="font-size: 14px;">Bids#: 20</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option selected>select bid</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div>
+                            <button class="bid-btn" onclick="increaseBid('price3',5)">+5</button>
+                            <button class="bid-btn" onclick="increaseBid('price3',20)">+20</button>
+                            <!-- <button class="bid-btn" onclick="maxBid('price3')">Max</button> -->
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mt-2">
+                            <input type="number" id="customBid3" class="form-control w-25 me-2" min="1"
+                                placeholder="+$">
+                            <button class="bid-btn" onclick="customBid('price3','customBid3')">Bid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+
+    <!-- Suggested Auctions -->
+    <section class="container suggested-auctions mt-5 mb-5">
+        <h2 class="mb-5 fw-bold">You May Also Like</h2>
+        <div class="row g-3">
+            <div class="col-md-3 col-6">
+                <a href="auction-details.html" class="text-decoration-none">
+
+                    <div class="auction-card">
+                        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80"
+                            alt="Item">
+                        <div class="auction-body text-center">
+                            <h5 class="auction-title">Smartphone</h5>
+                            <p class="auction-price">$400</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80"
+                        alt="Item">
+                    <div class="auction-body text-center">
+                        <h5 class="auction-title">Headphones</h5>
+                        <p class="auction-price">$200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80"
+                        alt="Item">
+                    <div class="auction-body text-center">
+                        <h5 class="auction-title">Smartphone</h5>
+                        <p class="auction-price">$400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="auction-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80"
+                        alt="Item">
+                    <div class="auction-body text-center">
+                        <h5 class="auction-title">Headphones</h5>
+                        <p class="auction-price">$200</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Countdown & Bid Script -->
+    <script>
+        function startCountdown(id, duration) {
+            let timer = duration, minutes, seconds;
+            const countdownElement = document.getElementById(id);
+            const interval = setInterval(() => {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdownElement.textContent = `Time Left: 00:${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    countdownElement.textContent = "Auction Ended";
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+
+        startCountdown("timer1", 600);
+        startCountdown("timer2", 900);
+        startCountdown("timer3", 1200);
+
+        function increaseBid(priceId, amount) {
+            const priceElement = document.getElementById(priceId);
+            let currentPrice = parseInt(priceElement.textContent.replace('$', ''));
+            currentPrice += amount;
+            priceElement.textContent = `$${currentPrice}`;
+
+            showNotification(`✅ Bid +$${amount} placed! New price: $${currentPrice}`);
+        }
+
+
+    </script>
+
+    <script>
+        // Toggle between grid and list view
+        document.getElementById("gridView").addEventListener("click", () => {
+            document.getElementById("auctionView").classList.remove("list-view");
+        });
+
+        document.getElementById("listView").addEventListener("click", () => {
+            document.getElementById("auctionView").classList.add("list-view");
+        });
+
+        // Custom bid input
+        function customBid(priceId, inputId) {
+            const priceEl = document.getElementById(priceId);
+            const bidInput = document.getElementById(inputId);
+            let currentPrice = parseInt(priceEl.textContent.replace('$', ''));
+            let bidValue = parseInt(bidInput.value);
+
+            if (!bidValue || bidValue <= 0) {
+                showNotification("⚠️ Please enter a valid bid amount!");
+                return;
+            }
+
+            currentPrice += bidValue;
+            priceEl.textContent = `$${currentPrice}`;
+            bidInput.value = "";
+
+            showNotification(`✅ Bid placed successfully! New price: $${currentPrice}`);
+        }
+
+        // Notification
+        function showNotification(message) {
+            const notification = document.getElementById("notification");
+            notification.textContent = message;
+            notification.classList.add("show");
+            setTimeout(() => {
+                notification.classList.remove("show");
+            }, 5000);
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

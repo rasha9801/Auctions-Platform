@@ -1,0 +1,138 @@
+        body {
+            background-color: #f8f9fa;
+            color: #111;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h4 {
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-control {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            color: #111;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #e63946;
+            box-shadow: 0 0 5px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-send {
+            background-color: #e63946;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 30px;
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+
+        .btn-send:hover {
+            background-color: #c92f3a;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Cards */
+        .faq-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .faq-box h5 {
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Google Map */
+        .map-container {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #fff;
+            font-size: 24px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5c;
+            transform: scale(1.1);
+        }
+
+        .contact-hero {
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)),
+                url("https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+            height: 85vh;
+            color: #fff;
+            text-align: center;
+        }
+
+        .info-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            background-color: #e63946;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .rating-stars i {
+            font-size: 2rem;
+            color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .rating-stars i.active {
+            color: #e63946;
+        }

@@ -1,6 +1,6 @@
     body {
         font-family: "Poppins", sans-serif;
-        background-color: #fff;
+        background-color: #f5f5f5;
         color: #111;
         overflow-x: hidden;
     }
@@ -21,10 +21,33 @@
         color: #fff !important;
         margin-left: 20px;
         transition: color 0.3s ease;
+        position: relative;
     }
 
     .nav-link:hover {
         color: #e63946 !important;
+    }
+
+    .nav-link:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #e63946;
+        opacity: 0;
+    }
+
+    .nav-link:hover:after {
+        width: 100%;
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+
+    .active {
+        color: #e63946 !important;
+        font-weight: 600;
     }
 
     .nav-item .btn:hover {
@@ -36,7 +59,7 @@
     /* Hero */
     .hero {
         background: linear-gradient(rgba(168, 167, 167, 0.5), rgba(0, 0, 0, 0.65)),
-            url("../images/Dubai-towers-1-AR822023.jpg") center/cover;
+            url("../images/WhatsApp\ Image\ 2025-10-18\ at\ 3.28.57\ PM.jpeg") center/cover;
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -68,6 +91,7 @@
         border-radius: 30px;
         transition: transform 0.3s ease, background 0.3s ease;
         animation: zoomIn 2.5s ease;
+        color: #fff;
     }
 
     .hero .btn:hover {
@@ -262,7 +286,9 @@
 
     /* Title decoration */
     .trending h2,
-    .closing-soon h2 {
+    .closing-soon h2,
+    .suggested-auctions h2,
+    .suggested-auctions h2 {
         position: relative;
         display: inline-block;
         font-size: 1.6rem;
@@ -272,7 +298,9 @@
     .trending h2::before,
     .trending h2::after,
     .closing-soon h2::after,
-    .closing-soon h2::before {
+    .closing-soon h2::before,
+    .suggested-auctions h2::after,
+    .suggested-auctions h2::before {
         content: "";
         position: absolute;
         top: 50%;
@@ -282,12 +310,14 @@
     }
 
     .trending h2::before,
-    .closing-soon h2::before {
+    .closing-soon h2::before,
+    .suggested-auctions h2::before {
         left: -50px;
     }
 
     .trending h2::after,
-    .closing-soon h2::after {
+    .closing-soon h2::after,
+    .suggested-auctions h2::after {
         right: -50px;
     }
 
@@ -354,3 +384,8 @@
             opacity: 1;
         }
     }
+  
+  html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}

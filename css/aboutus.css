@@ -1,0 +1,198 @@
+        /* heroabout Section */
+        .heroabout {
+            background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80') center/cover;
+            padding: 120px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .heroabout h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .heroabout p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #eee;
+        }
+
+        /* Section titles */
+        h2.section-title {
+            color: #e63946;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* How It Works */
+        .steps .card {
+            background-color: #1a1a1a;
+            border: 1px solid #e63946;
+            color: #fff;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .steps .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px #e63946;
+        }
+
+        .steps .card i {
+            color: #e63946;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Discover Section */
+        .discover {
+            background-color: #fff;
+            border-top: 3px solid #e63946;
+            padding: 60px 0;
+        }
+
+        .discover img {
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        /* Feature Steps */
+        .feature-step {
+            background-color: #1a1a1a;
+            border-left: 4px solid #e63946;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-step i {
+            color: #e63946;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 60px 0;
+        }
+
+        .video-thumbnail {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .video-thumbnail i {
+            position: absolute;
+            color: #fff;
+            font-size: 4rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+
+        /* Global Reach */
+        .global {
+            padding: 60px 0;
+        }
+
+        .global .card {
+            background-color: #1a1a1a;
+            border: 1px solid #e63946;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .global .card i {
+            color: #e63946;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .how-it-works {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #e63946;
+        }
+
+        .section-subtitle {
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        .step-card {
+            background-color: #1a1a1a;
+            border: 1px solid #222;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            padding-bottom: 20px;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #e63946;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+        }
+
+        .step-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #e63946;
+        }
+
+        .step-card h5 {
+            margin-top: 20px;
+            color: #e63946;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .step-img {
+                height: 180px;
+            }
+
+            .step-card {
+                margin-bottom: 20px;
+            }
+        }

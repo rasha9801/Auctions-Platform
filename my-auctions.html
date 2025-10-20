@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Auctions</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #111;
+        }
+
+        .auctions-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .auction-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .auction-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .auction-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .auction-body {
+            padding: 20px;
+        }
+
+        .auction-title {
+            font-weight: 700;
+            color: #e63946;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .auction-status {
+            font-weight: 600;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .actives {
+            background-color: #28a745;
+        }
+
+        .ended {
+            background-color: #6c757d;
+        }
+
+        .btn-auction {
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 20px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-auction:hover {
+            background-color: #c92f3a;
+        }
+
+        @media (max-width: 768px) {
+            .auction-card {
+                text-align: center;
+            }
+
+            .auction-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                     <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="auctions-container">
+        <h2 class="mb-4" style="color:#e63946; font-weight:700;">My Auctions</h2>
+
+        <div class="auction-card row g-0">
+            <div class="col-md-4">
+                <img src="images/fa7d7b77120a5022476015ce54f579d9.jpg" class="auction-img" alt="Auction Item">
+            </div>
+            <div class="col-md-8">
+                <div class="auction-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="auction-title">Vintage Watch</h3>
+                        <span class="auction-status actives ">Active</span>
+                    </div>
+                    <p>Starting bid: $100 | Current bid: $250</p>
+                    <p>Auction ends: 2025-10-25</p>
+                    <button class="btn-auction">View Details</button>
+                    <button class="btn-auction">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="auction-card row g-0">
+            <div class="col-md-4">
+                <img src="images/1746547485074[1].jpg" class="auction-img" alt="Auction Item">
+            </div>
+            <div class="col-md-8">
+                <div class="auction-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="auction-title">Antique Vase</h3>
+                        <span class="auction-status ended">Ended</span>
+                    </div>
+                    <p>Starting bid: $200 | Final bid: $450</p>
+                    <p>Auction ended: 2025-09-30</p>
+                    <button class="btn-auction">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

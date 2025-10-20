@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -29,14 +29,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Live Auctions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Buy Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><button class="btn text-light ms-4" style="background-color: #e63946;">Login</button></li>
-
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                     <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i
+                                class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
                 </ul>
             </div>
         </div>
@@ -46,7 +52,7 @@
     <section class="hero">
         <div class="container">
             <h1>Welcome to New Site Auction</h1>
-            <p>The largest platform for Cars, Towers, Companies & Houses Auctions</p> <a href="#" class="btn">Explore
+            <p>The largest platform for Cars, Towers, Companies & Houses Auctions</p> <a href="buy-now.html" class="btn">Explore
                 Auctions</a>
         </div>
     </section>
@@ -282,37 +288,53 @@
                     <p class="text-end" style="color: #e63946;">view All <i class="fas fa-share"></i></p>
                 </a>
                 <div class="col-md-3 filter-item cars hover-scale">
-                    <div class="card">
+                    <div class="card position-relative">
                         <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
                             class="card-img-top">
                         <div class="card-body text-center">
                             <h5>Luxury Car</h5>
                         </div>
+                        <div class="position-absolute bg-dark top-1 end-2 bg-light p-1"
+                            style="right: 50;border-radius: 20px; color: #fff;">
+                            45
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 filter-item houses hover-scale">
-                    <div class="card">
+                    <div class="card position-relative">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
                             class="card-img-top">
                         <div class="card-body text-center">
                             <h5>Modern House</h5>
                         </div>
+                        <div class="position-absolute bg-dark top-1 end-2 bg-light p-1"
+                            style="right: 50;border-radius: 20px; color: #fff;">
+                            45
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 filter-item towers hover-scale">
-                    <div class="card">
+                    <div class="card position-relative">
                         <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80"
                             class="card-img-top">
                         <div class="card-body text-center">
                             <h5>Business Tower</h5>
                         </div>
+                        <div class="position-absolute bg-dark top-1 end-2 bg-light p-1"
+                            style="right: 50;border-radius: 20px; color: #fff;">
+                            45
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 filter-item cars hover-scale">
-                    <div class="card">
+                    <div class="card position-relative">
                         <img src="images/prj.jpg" class="card-img-top">
                         <div class="card-body text-center">
                             <h5>Sports Car</h5>
+                        </div>
+                        <div class="position-absolute bg-dark top-1 end-2 bg-light p-1"
+                            style="right: 50;border-radius: 20px; color: #fff;">
+                            45
                         </div>
                     </div>
                 </div>
@@ -373,7 +395,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Luxury Villa</h5>
                             <p>3 Beds, 2 Baths, 2500 sq ft</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -384,7 +406,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Luxury Villa</h5>
                             <p>3 Beds, 2 Baths, 2500 sq ft</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -394,7 +416,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Luxury Villa</h5>
                             <p>3 Beds, 2 Baths, 2500 sq ft</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -404,7 +426,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Luxury Villa</h5>
                             <p>3 Beds, 2 Baths, 2500 sq ft</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -414,7 +436,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Modern Apartment</h5>
                             <p>2 Beds, 1 Bath, 1200 sq ft</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -425,7 +447,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Office Space</h5>
                             <p>5000 sq ft, Central Location</p>
-                            <a href="#" class="btn btn-dark">View Details</a>
+                            <a href="auction-details.html" class="btn btn-dark">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -501,20 +523,30 @@
     <footer>
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-12 col-md-3">
                     <h5 class="fw-bold text-danger">New Site Auction</h5>
                     <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-6 col-md-3">
                     <h5 class="fw-bold">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Auctions</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
                     <h5 class="fw-bold">Follow Us</h5>
                     <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
                     <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
@@ -664,7 +696,7 @@
 
         observer.observe(statsSection);
     </script>
-
+<script src="js/script.js"></script>
 
 </body>
 

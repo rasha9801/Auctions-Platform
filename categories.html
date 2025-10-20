@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+        }
+
+        /* Hero Section */
+        .hero-categories {
+            background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)),
+                url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .hero-categories h1 {
+            font-weight: 700;
+            color: #e63946;
+            font-size: 3rem;
+        }
+
+        .hero-categories p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #eee;
+        }
+
+        /* Filters */
+        .filter-section {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: -40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-section select,
+        .filter-section input {
+            border-radius: 10px;
+        }
+
+        /* Category Cards */
+        .category-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 16px rgba(230, 57, 70, 0.25);
+        }
+
+        .category-card img {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .category-card-body {
+            padding: 20px;
+        }
+
+        .category-card-body h5 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .category-card-body p {
+            color: #666;
+        }
+
+        .btn-explore {
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-explore:hover {
+            background-color: #c92f3a;
+        }
+
+        /* Featured Section */
+        .featured-category {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .featured-category img {
+            border-radius: 10px;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .featured-category h3 {
+            color: #e63946;
+            font-weight: 700;
+        }      
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">New Site Auction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                     <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+  <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero-categories">
+        <div class="container">
+            <h1>Explore Our Categories</h1>
+            <p>Find what suits you best — cars, properties, electronics, and much more!</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filter-section container my-5">
+        <form class="row g-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Search category...">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>All Categories</option>
+                    <option>Cars</option>
+                    <option>Real Estate</option>
+                    <option>Electronics</option>
+                    <option>Art & Antiques</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>Sort By</option>
+                    <option>Newest</option>
+                    <option>Most Popular</option>
+                    <option>Lowest Price</option>
+                    <option>Highest Price</option>
+                </select>
+            </div>
+        </form>
+    </section>
+
+    <!-- Category Grid -->
+    <section class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        alt="Cars">
+                    <div class="category-card-body">
+                        <h5>Cars</h5>
+                        <p>Over 250+ available vehicles</p>
+                        <button class="btn-explore">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80"
+                        alt="Real Estate">
+                    <div class="category-card-body">
+                        <h5>Real Estate</h5>
+                        <p>Find your next home or investment</p>
+                        <button class="btn-explore">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        alt="Electronics">
+                    <div class="category-card-body">
+                        <h5>Electronics</h5>
+                        <p>Smartphones, laptops, and more</p>
+                        <button class="btn-explore">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Category -->
+    <section class="featured-category container">
+        <div class="row align-items-center g-4">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80"
+                    alt="Featured Category">
+            </div>
+            <div class="col-md-6">
+                <h3>🔥 Featured Category: Classic Cars</h3>
+                <p>Discover rare and collectible classic cars from around the world. Perfect for enthusiasts and
+                    investors alike.</p>
+                <button class="btn-explore">Explore Now</button>
+            </div>
+        </div>
+    </section>
+  <!-- Newsletter -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Stay Updated!</h3>
+            <p>Subscribe to our newsletter and never miss an auction.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
