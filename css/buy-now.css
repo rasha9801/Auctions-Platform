@@ -32,11 +32,37 @@
         opacity: 0;
     }
 
+
     .nav-link:hover:after {
         width: 100%;
         opacity: 0.8;
         transition: 0.5s;
     }
+
+    /* إظهار القائمة عند المرور بالماوس */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* لإزالة المسافة الصغيرة بين الأيقونة والقائمة */
+}
+
+/* تحسين شكل القائمة */
+.dropdown-menu {
+    background-color: #111;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.dropdown-item {
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #e63946;
+    color: #fff;
+}
+
 
   .active {
       color: #e63946 !important;
@@ -326,4 +352,43 @@
   html[dir="rtl"] body {
     direction: rtl;
     text-align: right;
+}
+
+/* ===== fixed fliter ===== */
+@media (min-width: 992px) {
+  aside.col-lg-3 {
+    position: sticky;
+    top: 90px; 
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: #fff;
+    border-right: 2px solid #e63946;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  aside.col-lg-3::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  aside.col-lg-3::-webkit-scrollbar-thumb {
+    background-color: #e63946;
+    border-radius: 10px;
+  }
+}
+
+/* ===== أيقونات في عرض القائمة ===== */
+.list-view-card .d-flex.gap-2.mt-2 button.icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #f5f5f5;
+  /* color: #e63946; */
+  /* border: 1px solid #e63946; */
+  transition: all 0.3s ease;
+}
+
+.list-view-card .d-flex.gap-2.mt-2 button.icon-btn:hover {
+  background: #e63946;
+  color: #fff;
 }

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    .modal-content {
+      border-radius: 15px;
+    }
+
+    .reply-box {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #111;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="190" height="80"  alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle fs-5 active" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="requested-services.html">Requested Services</a></li>
+                            <li><a class="dropdown-item" href="purchases.html">Purchases</a></li>
+                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="unsold-vehicles.html">Unsold Vehicles</a></li>
+                            <li><a class="dropdown-item" href="invoice-list.html">Invoice List</a></li>
+                            <li><a class="dropdown-item" href="payment-list.html">Payment List</a></li>
+                            <li><a class="dropdown-item" href="messages.html">Messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-list list-unstyled p-0 m-0">
+        <li class="menu-item"><a href="index.html" class="menu-link"><i class="fa fa-home icon"></i><span
+              class="label">Home</span></a></li>
+        <li class="menu-item"><a href="online-auction.html" class="menu-link"><i class="fa fa-gavel icon"></i><span
+              class="label">Online Auction</span></a></li>
+        <li class="menu-item"><a href="silent-auction.html" class="menu-link"><i class="fa fa-gavel icon"></i><span
+              class="label">Silent Auction</span></a></li>
+        <li class="menu-item"><a href="auction-Guide.html" class="menu-link"><i class="fa fa-book icon"></i><span
+              class="label">Auction Guide</span></a></li>
+        <li class="menu-item"><a href="about.html" class="menu-link"><i class="fa fa-info-circle icon"></i><span
+              class="label">About Wataneya</span></a></li>
+        <li class="menu-item"><a href="contactUs.html" class="menu-link"><i class="fa fa-address-book icon"></i><span
+              class="label">Contact Us</span></a></li>
+        <li class="menu-item"><a href="login.html" class="menu-link"><i class="fa fa-sign-in-alt icon"></i><span
+              class="label">Login</span></a></li>
+        <li class="menu-item"><a href="register.html" class="menu-link"><i class="fa fa-user-plus icon"></i><span
+              class="label">Register Now</span></a></li>
+       
+      </ul>
+    </div>
+  </div>
+
+  <!-- table messages -->
+  <div class="container mt-5 mb-5 pt-3 pb-4">
+    <h2 class="mb-3 text-center">Messages</h2>
+
+    <div class="table-container">
+      <table class="table table-hover w-100 table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>Subject</th>
+            <th>Department</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center" id="pagination">
+        <li class="page-item"><a class="page-link text-danger" href="#" onclick="prevPage()">Previous</a></li>
+        <li class="page-item"><a class="page-link text-danger" href="#" onclick="nextPage()">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Modal Message -->
+  <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content shadow-lg">
+        <div class="modal-header text-white" style="background-color: #e63946;">
+          <h5 class="modal-title" id="messageModalLabel">Message Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Subject:</strong> <span id="modalSubject"></span></p>
+          <p><strong>Department:</strong> <span id="modalDept"></span></p>
+          <p><strong>Date:</strong> <span id="modalDate"></span></p>
+          <hr>
+          <p><strong>Message:</strong></p>
+          <p id="modalContent" class="bg-light p-3 rounded">hellow</p>
+          <div class="text-end">
+            <button class="btn text-light" style="background-color: #e63946;" id="replyBtn">Reply</button>
+          </div>
+          <div class="reply-box d-none">
+            <textarea class="form-control mb-3" rows="3" placeholder="Type your reply..."></textarea>
+            <div class="d-flex justify-content-end gap-2">
+              <button class="btn btn-secondary btn-sm" id="cancelReply">Cancel</button>
+              <button class="btn btn-success btn-sm">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Newsletter -->
+  <section class="newsletter" data-aos="fade-up">
+    <div class="container">
+      <h3 class="fw-bold mb-3">Stay Updated!</h3>
+      <p>Subscribe to our newsletter and never miss an auction.</p>
+      <form class="d-flex justify-content-center mt-3">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-3">
+          <h5 class="fw-bold text-danger">New Site Auction</h5>
+          <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="liveAuctions.html">Auctions</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5 class="fw-bold">Setting</h5>
+          <ul class="list-unstyled">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="my-auctions.html">My Auctions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms and Conditions</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3 text-center text-md-start">
+          <h5 class="fw-bold">Follow Us</h5>
+          <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // بيانات الرسائل
+    const messagesData = [
+      { subject: "Buyer Change", dept: "Operation", date: "1/16/2025, 12:16:37 PM" },
+      { subject: "Buyer Change", dept: "Operation", date: "1/16/2025, 5:00:43 AM" },
+      { subject: "Buyer Change", dept: "Accounatant", date: "12/25/2024, 3:05:47 AM" },
+      { subject: "Buyer Change", dept: "", date: "12/23/2024, 9:12:02 PM" },
+      { subject: "Buyer Change", dept: "Operation", date: "12/23/2024, 9:10:45 PM" },
+      { subject: "Buyer Change", dept: "Operation", date: "12/23/2024, 7:17:37 PM" },
+      { subject: "Buyer Change", dept: "Operation", date: "12/23/2024, 7:17:01 PM" },
+      { subject: "Buyer Change", dept: "Accounatant", date: "12/23/2024, 3:34:40 PM" }
+    ];
+
+    const rowsPerPage = 20;
+    let currentPage = 1;
+
+    function renderTable() {
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      const start = (currentPage - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      const pageData = messagesData.slice(start, end);
+
+      pageData.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.style.cursor = "pointer";
+        tr.innerHTML = `
+          <td>${row.subject}</td>
+          <td>${row.dept || '-'}</td>
+          <td>${row.date}</td>
+        `;
+        tr.onclick = () => openMessage(row);
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openMessage(row) {
+      document.getElementById("modalSubject").innerText = row.subject;
+      document.getElementById("modalDept").innerText = row.dept || "-";
+      document.getElementById("modalDate").innerText = row.date;
+      new bootstrap.Modal(document.getElementById("messageModal")).show();
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTable();
+      }
+    }
+
+    function nextPage() {
+      if (currentPage * rowsPerPage < messagesData.length) {
+        currentPage++;
+        renderTable();
+      }
+    }
+
+    // Reply toggle
+    document.getElementById("replyBtn").addEventListener("click", () => {
+      document.querySelector(".reply-box").classList.remove("d-none");
+    });
+
+    document.getElementById("cancelReply").addEventListener("click", () => {
+      document.querySelector(".reply-box").classList.add("d-none");
+    });
+
+    // أول عرض
+    renderTable();
+  </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

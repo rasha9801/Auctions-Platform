@@ -28,6 +28,32 @@
         color: #e63946 !important;
     }
 
+    /* إظهار القائمة عند المرور بالماوس */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        /* لإزالة المسافة الصغيرة بين الأيقونة والقائمة */
+    }
+
+    /* تحسين شكل القائمة */
+    .dropdown-menu {
+        background-color: #111;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown-item {
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: #e63946;
+        color: #fff;
+    }
+
+
     .nav-link:after {
         position: absolute;
         content: "";
@@ -289,7 +315,7 @@
         transform: scale(1);
     }
 
-     .swiper-pagination {
+    .swiper-pagination {
         position: relative !important;
         margin-top: 20px !important;
         bottom: 0 !important;
@@ -410,5 +436,3 @@
         direction: rtl;
         text-align: right;
     }
-
-   

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchases</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .table-container {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        thead {
+            background-color: #e63946;
+            color: #fff;
+        }
+
+        thead th,
+        tbody td {
+            text-align: center;
+            padding: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .btn-export {
+            background-color: #e63946;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-control-file {
+            display: inline-block;
+            max-width: 180px;
+        }
+
+        .modal-header {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .service-options {
+            margin-top: 1rem;
+        }
+
+        .btn-submit {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #111;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="190" height="80"  alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="liveAuctions.html">Live Auctions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy-now.html">Buy Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><button class="btn text-light ms-4"
+                            style="background-color: #111;">العربية</button></li>
+                    <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
+                                style="background-color: #e63946;">Login</button></a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle fs-5 active" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="requested-services.html">Requested Services</a></li>
+                            <li><a class="dropdown-item" href="purchases.html">Purchases</a></li>
+                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="unsold-vehicles.html">Unsold Vehicles</a></li>
+                            <li><a class="dropdown-item" href="invoice-list.html">Invoice List</a></li>
+                            <li><a class="dropdown-item" href="payment-list.html">Payment List</a></li>
+                            <li><a class="dropdown-item" href="messages.html">Messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="offcanvas-list list-unstyled p-0 m-0">
+                <li class="menu-item"><a href="index.html" class="menu-link"><i class="fa fa-home icon"></i><span
+                            class="label">Home</span></a></li>
+                <li class="menu-item"><a href="online-auction.html" class="menu-link"><i
+                            class="fa fa-gavel icon"></i><span class="label">Online Auction</span></a></li>
+                <li class="menu-item"><a href="silent-auction.html" class="menu-link"><i
+                            class="fa fa-gavel icon"></i><span class="label">Silent Auction</span></a></li>
+                <li class="menu-item"><a href="auction-Guide.html" class="menu-link"><i
+                            class="fa fa-book icon"></i><span class="label">Auction Guide</span></a></li>
+                <li class="menu-item"><a href="about.html" class="menu-link"><i class="fa fa-info-circle icon"></i><span
+                            class="label">About Wataneya</span></a></li>
+                <li class="menu-item"><a href="contactUs.html" class="menu-link"><i
+                            class="fa fa-address-book icon"></i><span class="label">Contact Us</span></a></li>
+                <li class="menu-item"><a href="login.html" class="menu-link"><i class="fa fa-sign-in-alt icon"></i><span
+                            class="label">Login</span></a></li>
+                <li class="menu-item"><a href="register.html" class="menu-link"><i
+                            class="fa fa-user-plus icon"></i><span class="label">Register Now</span></a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- table  Purchases-->
+
+    <div class="container mt-5 pt-3 pb-3">
+        <h2 class="mb-3 text-center">Purchases</h2>
+
+        <!-- Search & Export -->
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control w-100" placeholder="Search all fields...">
+            <button class="btn btn-export mt-3" onclick="exportTableToExcel('purchasesTable', 'Purchases')"><i
+                    class="fa fa-file-excel"></i> Export to Excel</button>
+        </div>
+
+        <div class="table-container">
+            <table class="table table-hover w-100 table-striped" id="purchasesTable">
+                <thead>
+                    <tr>
+                        <th>Lot #</th>
+                        <th>Title</th>
+                        <th>Chassis no.</th>
+                        <th>Ends</th>
+                        <th>Highest Bid</th>
+                        <th>Total Due</th>
+                        <th>Status</th>
+                        <th>Upload Payment Slip</th>
+                        <th>Request Service</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>47027</td>
+                        <td>Mercedes-Benz A 250</td>
+                        <td>WDDBF4EB5JJ595728</td>
+                        <td>02/12/2022</td>
+                        <td>16,000.00</td>
+                        <td>17,115.00</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><input type="file" class="form-control form-control-sm"></td>
+                        <td><button class="btn btn-sm text-light" style="background-color: #e63946;"
+                                onclick="openServiceModal()">Request Service</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>46718</td>
+                        <td>Porsche Carrera 911</td>
+                        <td>WP0CB2A96-NS244067</td>
+                        <td>11/11/2022</td>
+                        <td>209,600.00</td>
+                        <td>220,395.00</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><input type="file" class="form-control form-control-sm"></td>
+                        <td><button class="btn btn-sm text-light" style="background-color: #e63946;"
+                                onclick="openServiceModal()">Request Service</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>43576</td>
+                        <td>Volkswagen Caddy</td>
+                        <td>WV1CAZSE4DX000139</td>
+                        <td>03/06/2022</td>
+                        <td>5,900.00</td>
+                        <td>6,720.00</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><input type="file" class="form-control form-control-sm"></td>
+                        <td><button class="btn btn-sm text-light" style="background-color: #e63946;"
+                                onclick="openServiceModal()">Request Service</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Request Service Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request Service</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="serviceSelect" class="form-label">Select Service</label>
+                    <select id="serviceSelect" class="form-select" onchange="renderServiceOptions()">
+                        <option value="">-- Choose --</option>
+                        <option value="inspection">Car Inspection</option>
+                        <option value="recovery">Recovery</option>
+                        <option value="recovery">Car Insurance</option>
+                        <option value="buyerChange">Buyer Change</option>
+                    </select>
+
+                    <div id="serviceOptions" class="service-options"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Newsletter -->
+  <section class="newsletter" data-aos="fade-up">
+    <div class="container">
+      <h3 class="fw-bold mb-3">Stay Updated!</h3>
+      <p>Subscribe to our newsletter and never miss an auction.</p>
+      <form class="d-flex justify-content-center mt-3">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <h5 class="fw-bold text-danger">New Site Auction</h5>
+                    <p>Your #1 trusted auction platform for Cars, Houses, Towers and Companies.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="liveAuctions.html">Auctions</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h5 class="fw-bold">Setting</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="my-auctions.html">My Auctions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#"><i class="fab fa-facebook fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg me-3"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center">© 2025 New Site Auction | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + XLSX -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        // Export to Excel
+        function exportTableToExcel(tableID, filename = '') {
+            var table = document.getElementById(tableID);
+            var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+            XLSX.writeFile(wb, filename + ".xlsx");
+        }
+
+        // Search filter
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll("#tableBody tr");
+            rows.forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
+            });
+        });
+
+        // Open modal
+        function openServiceModal() {
+            let modal = new bootstrap.Modal(document.getElementById("serviceModal"));
+            document.getElementById("serviceSelect").value = "";
+            document.getElementById("serviceOptions").innerHTML = "";
+            modal.show();
+        }
+
+        // Render dynamic form fields
+        function renderServiceOptions() {
+            const service = document.getElementById("serviceSelect").value;
+            const container = document.getElementById("serviceOptions");
+            container.innerHTML = "";
+
+            if (service === "inspection") {
+                container.innerHTML = `
+        <label class="form-label">Choose Inspection Type</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="inspection" id="comprehensive">
+          <label class="form-check-label" for="comprehensive">Comprehensive - 500 AED</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="inspection" id="basic">
+          <label class="form-check-label" for="basic">Basic - 250 AED</label>
+        </div>
+        <div class="mt-3 text-end">
+          <button class="btn btn-submit">Submit</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      `;
+            }
+            else if (service === "recovery") {
+                container.innerHTML = `
+        <label class="form-label">Notes</label>
+        <textarea class="form-control mb-2"></textarea>
+        <label class="form-label">Upload File</label>
+        <input type="file" class="form-control mb-3">
+        <div class="text-end">
+          <button class="btn btn-submit">Save</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      `;
+            }
+            else if (service === "buyerChange") {
+                container.innerHTML = `
+        <label class="form-label">New Buyer Name</label>
+        <input type="text" class="form-control mb-2">
+        <label class="form-label">New Buyer ID Number</label>
+        <input type="text" class="form-control mb-2">
+        <label class="form-label">Upload File</label>
+        <input type="file" class="form-control mb-2">
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="terms">
+          <label class="form-check-label" for="terms">Accept Terms and Conditions</label>
+        </div>
+        <div class="text-end">
+          <button class="btn btn-submit">Submit</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      `;
+            }
+        }
+    </script>
+      <script src="js/script.js"></script>
+
+</body>
+
+</html>

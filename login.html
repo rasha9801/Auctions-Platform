@@ -17,10 +17,10 @@
 
 <body>
 
-      <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #111;">
         <div class="container">
-            <a class="navbar-brand" href="#">New Site Auction</a>
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="190" height="80"  alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,12 +32,27 @@
                     <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
-                     <li class="nav-item"><button class="btn text-light ms-4"
+                    <li class="nav-item"><button class="btn text-light ms-4"
                             style="background-color: #111;">العربية</button></li>
                     <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
                                 style="background-color: #e63946;">Login</button></a></li>
-                                  <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i class="far fa-user-circle"></i></a></li>
-                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i class="fas fa-sign-out-alt"></i></a> </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle fs-5" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="requested-services.html">Requested Services</a></li>
+                            <li><a class="dropdown-item" href="purchases.html">Purchases</a></li>
+                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="unsold-vehicles.html">Unsold Vehicles</a></li>
+                            <li><a class="dropdown-item" href="invoice-list.html">Invoice List</a></li>
+                            <li><a class="dropdown-item" href="payment-list.html">Payment List</a></li>
+                            <li><a class="dropdown-item" href="messages.html">Messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
+                                class="fas fa-sign-out-alt"></i></a> </li>
                 </ul>
             </div>
         </div>
@@ -79,7 +94,7 @@
         <div class="login-img flex-fill d-none d-md-block"></div>
     </div>
 
-      <!-- Newsletter -->
+    <!-- Newsletter -->
     <section class="newsletter" data-aos="fade-up">
         <div class="container">
             <h3 class="fw-bold mb-3">Stay Updated!</h3>
@@ -90,7 +105,7 @@
             </form>
         </div>
     </section>
-       <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row g-4">

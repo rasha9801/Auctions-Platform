@@ -15,9 +15,9 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #111;">
         <div class="container">
-            <a class="navbar-brand" href="#">New Site Auction</a>
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="190" height="80"  alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,8 +33,21 @@
                             style="background-color: #111;">العربية</button></li>
                     <li class="nav-item"><a href="login.html"><button class="btn text-light ms-4"
                                 style="background-color: #e63946;">Login</button></a></li>
-                    <li class="nav-item"> <a href="profile.html" class="nav-link fs-5"><i
-                                class="far fa-user-circle"></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle fs-5" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="requested-services.html">Requested Services</a></li>
+                            <li><a class="dropdown-item" href="purchases.html">Purchases</a></li>
+                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="unsold-vehicles.html">Unsold Vehicles</a></li>
+                            <li><a class="dropdown-item" href="invoice-list.html">Invoice List</a></li>
+                            <li><a class="dropdown-item" href="payment-list.html">Payment List</a></li>
+                            <li><a class="dropdown-item" href="messages.html">Messages</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"> <a href="login.html" class="nav-link fs-5"><i
                                 class="fas fa-sign-out-alt"></i></a> </li>
                 </ul>
@@ -215,7 +228,7 @@
                             </div>
 
                             <div class="d-flex gap-2 align-items-center mb-3">
-                                <button class="btn btn-buy" id="modalBuyBtn"><i class="fa fa-credit-card me-2"></i> Buy
+                                <button class="btn btn-buy"><i class="fa fa-credit-card me-2"></i> Buy
                                     Now</button>
 
                             </div>
@@ -402,9 +415,6 @@
             });
         }
 
-
-
-
         /***** Actions *****/
         function openQuickView(id) {
             const p = PRODUCTS.find(x => x.id === id);
@@ -447,22 +457,32 @@
 
         function setGrid(cols) {
             const grid = document.getElementById('productsGrid');
-            if (cols === 1) {
-                // نمط قائمة أفقية
-                Array.from(grid.children).forEach(c => {
+            Array.from(grid.children).forEach(c => {
+                const card = c.querySelector('.product-card');
+                const iconRow = card.querySelector('.position-absolute.top-0.end-0');
+
+                if (cols === 1) {
+                    // عرض القائمة
                     c.className = 'col-12';
-                    const card = c.querySelector('.product-card');
                     card.classList.add('list-view-card');
-                });
-            } else {
-                // نمط شبكي 3 أعمدة
-                Array.from(grid.children).forEach(c => {
+                    if (iconRow) {
+                        // انقل الأيقونات إلى داخل جسم البطاقة تحت السعر
+                        const priceDiv = card.querySelector('.price');
+                        const iconContainer = document.createElement('div');
+                        iconContainer.className = 'd-flex gap-2 mt-2';
+                        iconContainer.appendChild(iconRow.children[0].cloneNode(true));
+                        iconContainer.appendChild(iconRow.children[1].cloneNode(true));
+                        priceDiv.parentNode.appendChild(iconContainer);
+                        iconRow.remove();
+                    }
+                } else {
+                    // عرض الشبكة
                     c.className = 'col-md-4';
-                    const card = c.querySelector('.product-card');
                     card.classList.remove('list-view-card');
-                });
-            }
+                }
+            });
         }
+
 
 
         // Filters
@@ -484,7 +504,7 @@
             if (sort === 'price-asc') currentProducts.sort((a, b) => a.price - b.price);
             else if (sort === 'price-desc') currentProducts.sort((a, b) => b.price - a.price);
             else if (sort === 'popular') currentProducts.sort((a, b) => b.rating - a.rating);
-            else currentProducts = currentProducts; // latest keep original order
+            else currentProducts = currentProducts;
 
             currentPage = 1;
             renderProducts();

@@ -2,7 +2,6 @@
 .carousel-item img {
     height: 300px;
     object-fit: cover;
-    border-radius: 15px;
 }
 
 .carousel-caption {
@@ -143,12 +142,40 @@
 }
 
 .notification.show {
-  opacity: 1;
-  transform: translateY(-10px);
-  transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
 }
 
-/* ====== List View====== */
+/* ====== Filters Sidebar ====== */
+.filters-sidebar {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+  
+}
+
+.filters-sidebar::-webkit-scrollbar-thumb {
+    background-color: #e63946;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .filters-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        border: none;
+        box-shadow: none;
+    }
+
+    .auction-container {
+        margin-left: 0;
+    }
+}
+
+/* ====== List View (4 أعمدة) ====== */
 .list-view .col-md-4 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -157,45 +184,109 @@
 .list-view .auction-card {
     display: flex;
     align-items: center;
-    height: auto;
-    flex-direction: row;
+    justify-content: space-between;
+    height: 230px;
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .list-view .auction-card img {
-    width: 250px;
+    width: 220px;
     height: 100%;
     object-fit: cover;
     border-right: 2px solid #e63946;
-    border-radius: 8px;
 }
 
 .list-view .auction-body {
     flex: 1;
+    padding: 1rem;
     text-align: left;
-    padding: 1.5rem 2rem;
 }
 
-.list-view .auction-body h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.list-view .auction-info {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 10px;
+    text-align: left;
 }
 
-.list-view .auction-body p {
-    margin: 0.25rem 0;
+.list-view .auction-actions {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #eee;
+    padding: 0 10px;
 }
 
 .list-view .bid-btn {
-    padding: 6px 16px;
-    margin: 4px;
+    padding: 4px 10px;
+    font-size: 13px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-.list-view .countdown {
-    font-size: 0.95rem;
+.list-view .bid-btn:hover {
+    background-color: #c71c2f;
 }
 
-.list-view .auction-price {
-    font-size: 1.2rem;
+/* input */
+.list-view input.form-control {
+    height: 28px;
+    font-size: 13px;
+    width: 70px;
+    text-align: center;
+    padding: 0;
+}
+
+.list-view p,
+.list-view label {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ===== ثابت الفلاتر Sidebar ===== */
+@media (min-width: 992px) {
+  aside.col-md-3 {
+    position: sticky;
+    top: 85px; /* تحت الـ navbar */
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: #fff;
+    border-right: 2px solid #e63946;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px 0;
+    padding: 20px 15px;
+    z-index: 10;
+  }
+
+  aside.col-md-3::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  aside.col-md-3::-webkit-scrollbar-thumb {
+    background-color: #e63946;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  aside.col-md-3 {
+    position: relative;
+    top: 0;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 1.5rem;
+  }
 }
